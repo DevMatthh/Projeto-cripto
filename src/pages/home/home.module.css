@@ -1,0 +1,161 @@
+.container {
+  margin: 0 14px;
+}
+.form {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+.form input {
+  width: 100%;
+  height: 44px;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 4px;
+  outline: none;
+}
+
+.form button {
+  background-color: transparent;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 14px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+table caption {
+  font-size: 16px;
+  margin: 0.5em 0 0.75em;
+}
+th {
+  color: white;
+}
+.tr {
+  background-color: #1d1c20;
+}
+/* primeiro filho,primeiro item */
+/*  fazendo a borda de cima */
+td:first-child,
+th:first-child {
+  border-radius: 8px 0 0 8px; /*  ORDEM 0 0 0 0 (em cima, direita, baixo, esquerda) */
+}
+
+/*  fazendo a borda de baixo */
+td:last-child,
+th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+table th,
+table td {
+  padding: 14px;
+  text-align: center;
+}
+
+/*  estilizando cada item da tabela com o tdlabel */
+
+.tdLabel {
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+}
+
+/*  quando o grafico estiver positivo ficara verde */
+.tdProfit {
+  color: #12f98a;
+  font-weight: bold;
+}
+
+/*  quando o grafico estiver negativo ficara vermelho */
+
+.tdLoss {
+  color: #f91257;
+  font-weight: bold;
+}
+
+.buttonMore {
+  background-color: #30beff;
+  padding: 8px 24px;
+  color: white;
+  margin: 14px 0;
+  border-radius: 8px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+  transition: all 1s;
+}
+
+.logo:hover {
+  transform: scale(1.5);
+  z-index: 99;
+}
+
+.name {
+  display: flex;
+  gap: 8px; /* espaçar entre o link e o icone */
+  align-items: center;
+}
+
+/*  fazendo a adaptação da nossa tabela para o mobile (RESPONSIVIDADE DA TABELA)*/
+
+@media screen and (max-width: 600px) {
+  .name img {
+    margin-left: 14px;
+  }
+  table {
+    border: 0;
+  }
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden; /*  overflow: tudo que passar do nosso cabeçalho iremos esconder */
+    position: absolute;
+    width: 1px;
+    padding: 0;
+  }
+
+  .tr {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    margin-bottom: 14px; /*  cada item em baixo de cada item vai ter uma margin para nao ficar tudo grudado */
+  }
+  /*  acessando cada item */
+  table td {
+    border-bottom: 1px solid rgba(221, 221, 221, 0.17);
+    display: block;
+    text-align: right; /*  cada valor de moeda queremos colocar na direita */
+    font-size: 14px;
+  }
+
+  /* colocando os itens da coluna na esquerda */
+  table td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+  /* primeiro filho,primeiro item */
+  /*  fazendo a borda de cima */
+  td:first-child,
+  th:first-child {
+    border-radius: 0; /*  ORDEM 0 0 0 0 (em cima, direita, baixo, esquerda) */
+  }
+
+  /*  fazendo a borda de baixo */
+  td:last-child,
+  th:last-child {
+    border-radius: 0;
+  }
+}

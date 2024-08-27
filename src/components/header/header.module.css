@@ -1,0 +1,13 @@
+/* module.css é um css escopado, e um css que podemos criar e importar dentro do componente */
+/*  e as classes, os estilos que colocarmos dentro desse module.css ele só vai ser acessivel dentro do componente header */
+/*  por exemplo, se criarmos uma classe .home no css, e la na pagina home termos um arquivo .css com a mesma classe .home */
+/*  elas nao vão conflitar, por que vai ser escopado,dentro só do escopo do componente */
+/*  ou seja, esse arquivo header.module.css iremos importar ele no header e as classes que colocarmos dentro do arquivo, só serao utilizadas e aplicadas APENAS no componente header */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  max-width: 1080px;
+}
