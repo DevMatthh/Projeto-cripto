@@ -147,7 +147,7 @@ export function Home() {
                   }
                   data-label="Mudança 24h"
                 >
-                  <span>{`Number(item.changePercent24Hr).toFixed(4) + "%"`}</span>
+                  <span>{`Number(item.changePercent24Hr).toFixed(3) + "%"`}</span>
                 </td>
               </tr>
             ))}
