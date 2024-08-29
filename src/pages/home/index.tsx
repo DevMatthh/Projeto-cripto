@@ -62,7 +62,9 @@ export function Home() {
             ...item, // pegando cada item
             formatedPrice: price.format(Number(item.priceUsd)), // colocando mais uma propriedade de preço formatado
             formatedMarket: priceCompact.format(Number(item.marketCapUsd)), // colocando mais uma propriedade de preço formatado
-            formatedVolume: priceCompact.format(Number(item.volumeUsd24Hr)),
+            formatedVolume: priceCompact.format(
+              Number(item.volumeUsd24Hr + "%")
+            ),
           };
           return formated;
         });
